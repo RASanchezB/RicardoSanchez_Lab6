@@ -45,7 +45,6 @@ public class Administracion {
         try {
             fw = new FileWriter (archivo,false);
             bw = new BufferedWriter(fw);
-            System.out.println("Sizw: " + listaP.size());
             for (Productos t : listaP) {
                 bw.write(t.getNombreP() + ";");
                 bw.write(t.getCategoria() + ";");
