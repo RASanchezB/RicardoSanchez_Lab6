@@ -60,6 +60,7 @@ public class Administracion {
     }
     public void cargarArchivo(){
         Scanner sc = null;
+        //listaP = new ArrayList();
         try {
             sc = new Scanner(archivo);
             sc.useDelimiter(";");

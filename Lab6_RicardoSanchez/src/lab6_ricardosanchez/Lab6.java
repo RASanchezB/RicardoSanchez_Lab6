@@ -56,6 +56,7 @@ public class Lab6 extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jb_ActualizarLista = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -390,6 +391,8 @@ public class Lab6 extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setText("Factorar");
+
         javax.swing.GroupLayout jd_MenuClienteLayout = new javax.swing.GroupLayout(jd_MenuCliente.getContentPane());
         jd_MenuCliente.getContentPane().setLayout(jd_MenuClienteLayout);
         jd_MenuClienteLayout.setHorizontalGroup(
@@ -409,11 +412,17 @@ public class Lab6 extends javax.swing.JFrame {
                         .addGroup(jd_MenuClienteLayout.createSequentialGroup()
                             .addGap(224, 224, 224)
                             .addComponent(jLabel14))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jd_MenuClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_ActualizarLista)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(107, Short.MAX_VALUE))
+                    .addGroup(jd_MenuClienteLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jd_MenuClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_ActualizarLista)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(107, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_MenuClienteLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton4)
+                        .addGap(29, 29, 29))))
         );
         jd_MenuClienteLayout.setVerticalGroup(
             jd_MenuClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,13 +438,15 @@ public class Lab6 extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addGroup(jd_MenuClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_MenuClienteLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
                         .addGap(23, 23, 23))
                     .addGroup(jd_MenuClienteLayout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jb_ActualizarLista)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                        .addComponent(jButton4)
+                        .addGap(43, 43, 43))))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -536,7 +547,8 @@ public class Lab6 extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Guardado");
         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_ElimCliente.getModel();
         modelo.addElement(C);
-        
+        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Compra.getModel();
+        modelo2.addElement(C);
     }//GEN-LAST:event_jb_GuardarCMouseClicked
 
     private void jb_GuardarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_GuardarCActionPerformed
@@ -567,12 +579,14 @@ public class Lab6 extends javax.swing.JFrame {
     private void jb_BorrarCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_BorrarCMouseClicked
         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_ElimCliente.getModel();
         cb_ElimCliente.removeItem(cb_ElimCliente.getSelectedItem());
+        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Compra.getModel();
+        cb_Compra.removeItem(cb_Compra.getSelectedItem());
     }//GEN-LAST:event_jb_BorrarCMouseClicked
 
     private void jb_BorrarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_BorrarPMouseClicked
        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_ElimProducto.getModel();
        modelo.removeElement(modelo.getSelectedItem());
-        
+       
     }//GEN-LAST:event_jb_BorrarPMouseClicked
 
     private void jb_ActualizarListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ActualizarListaMouseClicked
@@ -662,6 +676,7 @@ public class Lab6 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

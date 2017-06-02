@@ -46,7 +46,7 @@ public class Productos {
 
     @Override
     public String toString() {
-        return NombreP;
+        return NombreP + "Precio: Lps" + Precio;
     }
     
     
