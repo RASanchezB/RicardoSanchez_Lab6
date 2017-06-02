@@ -56,7 +56,12 @@ public class Lab6 extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jb_comprar = new javax.swing.JButton();
         jb_ActualizarLista = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jb_AbrirFactura = new javax.swing.JButton();
+        jd_Factura = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel17 = new javax.swing.JLabel();
+        jb_Facturar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -396,10 +401,10 @@ public class Lab6 extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Facturar");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_AbrirFactura.setText("Facturar");
+        jb_AbrirFactura.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
+                jb_AbrirFacturaMouseClicked(evt);
             }
         });
 
@@ -431,7 +436,7 @@ public class Lab6 extends javax.swing.JFrame {
                         .addContainerGap(107, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_MenuClienteLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)
+                        .addComponent(jb_AbrirFactura)
                         .addGap(29, 29, 29))))
         );
         jd_MenuClienteLayout.setVerticalGroup(
@@ -455,8 +460,51 @@ public class Lab6 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jb_ActualizarLista)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
-                        .addComponent(jButton4)
+                        .addComponent(jb_AbrirFactura)
                         .addGap(43, 43, 43))))
+        );
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel17.setText("Factura");
+
+        jb_Facturar.setText("Actualizar");
+        jb_Facturar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_FacturarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_FacturaLayout = new javax.swing.GroupLayout(jd_Factura.getContentPane());
+        jd_Factura.getContentPane().setLayout(jd_FacturaLayout);
+        jd_FacturaLayout.setHorizontalGroup(
+            jd_FacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_FacturaLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel17)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jd_FacturaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_FacturaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jb_Facturar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
+        );
+        jd_FacturaLayout.setVerticalGroup(
+            jd_FacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_FacturaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_Facturar)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -652,12 +700,25 @@ public class Lab6 extends javax.swing.JFrame {
         DefaultListModel mod = (DefaultListModel) jl_Productos.getModel();
         int s = jl_Productos.getSelectedIndex();
         ((Clientes)modelo.getSelectedItem()).getListaP().add(((Productos)mod.getElementAt(s)));
+        JOptionPane.showMessageDialog(this, "Comprado, continue comprando si desea");
+        mod.removeElementAt(s);
         
     }//GEN-LAST:event_jb_comprarMouseClicked
 
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4MouseClicked
+    private void jb_AbrirFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_AbrirFacturaMouseClicked
+        jd_Factura.setModal(true);
+        jd_Factura.pack();
+        jd_Factura.setLocationRelativeTo(this);
+        jd_Factura.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jb_AbrirFacturaMouseClicked
+
+    private void jb_FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_FacturarMouseClicked
+        
+        
+        
+    }//GEN-LAST:event_jb_FacturarMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -697,7 +758,6 @@ public class Lab6 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_ModProductos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -706,6 +766,7 @@ public class Lab6 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -721,16 +782,21 @@ public class Lab6 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton jb_AbrirFactura;
     private javax.swing.JButton jb_ActualizarElimP;
     private javax.swing.JButton jb_ActualizarLista;
     private javax.swing.JButton jb_ActualizarModP;
     private javax.swing.JButton jb_BorrarC;
     private javax.swing.JButton jb_BorrarP;
+    private javax.swing.JButton jb_Facturar;
     private javax.swing.JButton jb_GuardarC;
     private javax.swing.JButton jb_GuardarP;
     private javax.swing.JButton jb_ModProducto;
     private javax.swing.JButton jb_comprar;
+    private javax.swing.JDialog jd_Factura;
     private javax.swing.JDialog jd_MenuCliente;
     private javax.swing.JDialog jd_MenuUsuario;
     private javax.swing.JList<String> jl_Productos;
