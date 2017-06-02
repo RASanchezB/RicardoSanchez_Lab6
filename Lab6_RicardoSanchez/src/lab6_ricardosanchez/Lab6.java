@@ -54,7 +54,7 @@ public class Lab6 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jl_Productos = new javax.swing.JList<>();
         jLabel16 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        jb_comprar = new javax.swing.JButton();
         jb_ActualizarLista = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -382,7 +382,12 @@ public class Lab6 extends javax.swing.JFrame {
 
         jLabel16.setText("Productos:");
 
-        jButton3.setText("Comprar");
+        jb_comprar.setText("Comprar");
+        jb_comprar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_comprarMouseClicked(evt);
+            }
+        });
 
         jb_ActualizarLista.setText("Acrualizar lista");
         jb_ActualizarLista.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -391,7 +396,12 @@ public class Lab6 extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Factorar");
+        jButton4.setText("Facturar");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_MenuClienteLayout = new javax.swing.GroupLayout(jd_MenuCliente.getContentPane());
         jd_MenuCliente.getContentPane().setLayout(jd_MenuClienteLayout);
@@ -417,7 +427,7 @@ public class Lab6 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jd_MenuClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jb_ActualizarLista)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jb_comprar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(107, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_MenuClienteLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -441,7 +451,7 @@ public class Lab6 extends javax.swing.JFrame {
                         .addComponent(jScrollPane1)
                         .addGap(23, 23, 23))
                     .addGroup(jd_MenuClienteLayout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jb_comprar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jb_ActualizarLista)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
@@ -636,6 +646,18 @@ public class Lab6 extends javax.swing.JFrame {
     private void cb_CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_CompraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_CompraActionPerformed
+
+    private void jb_comprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_comprarMouseClicked
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Compra.getModel();
+        DefaultListModel mod = (DefaultListModel) jl_Productos.getModel();
+        int s = jl_Productos.getSelectedIndex();
+        ((Clientes)modelo.getSelectedItem()).getListaP().add(((Productos)mod.getElementAt(s)));
+        
+    }//GEN-LAST:event_jb_comprarMouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4MouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -675,7 +697,6 @@ public class Lab6 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_ModProductos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -709,6 +730,7 @@ public class Lab6 extends javax.swing.JFrame {
     private javax.swing.JButton jb_GuardarC;
     private javax.swing.JButton jb_GuardarP;
     private javax.swing.JButton jb_ModProducto;
+    private javax.swing.JButton jb_comprar;
     private javax.swing.JDialog jd_MenuCliente;
     private javax.swing.JDialog jd_MenuUsuario;
     private javax.swing.JList<String> jl_Productos;

@@ -538,7 +538,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jb_ActualizarLista" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton3" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
+                              <Component id="jb_comprar" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="107" max="32767" attributes="0"/>
                       </Group>
@@ -570,7 +570,7 @@
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButton3" min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="jb_comprar" min="-2" pref="57" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jb_ActualizarLista" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="142" max="32767" attributes="0"/>
@@ -633,10 +633,13 @@
             <Property name="text" type="java.lang.String" value="Productos:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="jb_comprar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Comprar"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_comprarMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jb_ActualizarLista">
           <Properties>
@@ -648,8 +651,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Factorar"/>
+            <Property name="text" type="java.lang.String" value="Facturar"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton4MouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
